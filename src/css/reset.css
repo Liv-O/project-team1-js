@@ -8,11 +8,7 @@ p {
   margin: 0;
 }
 
-p:last-child {
-  margin-bottom: 0;
-}
-
-ul {
+ul, ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -32,3 +28,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+address {
+  font-style: normal;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  color: #0b0500;;
+  background-color: #fceee6;;
+}
+
+
+
+
