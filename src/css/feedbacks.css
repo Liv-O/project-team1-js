@@ -1,5 +1,8 @@
+.feedbacks {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
 .feedbacks-div-title {
-  margin-top: 64px;
   margin-bottom: 80px;
 }
 
@@ -18,20 +21,30 @@
   line-height: 1.5;
 }
 
-.swiper {
+.swiper-div {
 }
 .swiper-wrapper {
+  display: flex;
+  /* gap: 24px; */
 }
 
 .swiper-slide {
+}
+.feedbacks-item {
   display: flex;
+  justify-content: space-between;
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
-  padding-top: 32px;
+  /* padding-top: 32px;
   padding-left: 32px;
   padding-right: 32px;
-  padding-bottom: 102px;
+  padding-bottom: 32px; */
+  /* padding-bottom: 102px; */
+  padding: 32px;
   margin-bottom: 32px;
+}
+
+.container-comments {
 }
 
 .feedbacks-comments {
@@ -42,12 +55,14 @@
   padding-left: 32px;
   padding-right: 32px; */
   margin-bottom: 24px;
+  min-height: 108px;
 }
 
 .user-info {
   display: flex;
   align-items: center;
   gap: 16px;
+  padding-bottom: 70px;
 }
 
 .feedbacks-comments-img {
@@ -59,6 +74,7 @@
 .user-details {
   display: flex;
   flex-direction: column;
+  /* padding-bottom: 70px; */
 }
 
 .feedbacks-comments-name {
@@ -73,17 +89,83 @@
   line-height: 1.5;
 }
 
-/* .pagination-button {
+.pagination-button {
   display: flex;
   align-items: center;
+  flex-direction: end;
   gap: 16px;
-} */
+}
 
-.swiper-button-prev,
-.swiper-button-next {
+.icon-arrow {
+  display: block;
+  fill: #fff;
+}
+
+.button-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(11, 5, 0, 0.15);
   padding: 12px;
   width: 48px;
   height: 48px;
   background: #e15d05;
 }
+.swiper-button-prev,
+.swiper-button-next {
+}
+
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+  .section-feedbacks-container {
+    /* min-width: 705px; */
+  }
+  .feedbacks-title-main {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .feedbacks-title-litle {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .feedbacks-item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(11, 5, 0, 0.15);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    min-height: 244px;
+  }
+  .feedbacks-comments {
+    min-height: 135px;
+  }
+  .user-info {
+  }
+  .feedbacks-comments-img {
+  }
+  .user-details {
+  }
+  .feedbacks-comments-name {
+  }
+  .feedbacks-comments-description {
+  }
+  .pagination-button {
+  }
+  .swiper-pagination {
+  }
+  .swiper-button-prev {
+  }
+  .button-svg {
+  }
+  .icon-arrow {
+  }
+  .swiper-button-next {
+  }
+}
+/* Tablet */
