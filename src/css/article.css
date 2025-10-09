@@ -7,7 +7,7 @@
     
 }
 
-.article-text-container {}
+
 
 .article-title {
     font-weight: 600;
@@ -26,12 +26,28 @@
 
 .article-img {
     border-radius: 16px;
+    width: 100%;
 }
 
 /* Tablet */
 
 @media screen and (min-width: 768px) { 
 
+}
 
+/* Laptop */
 
+@media screen and (min-width: 1440px) {
+    .article-container {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+    }
+
+    .article-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
 }
