@@ -57,9 +57,11 @@ const contactModalForm = document.querySelector('.contact-modal-form');
 contactModalForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  const userName = contactModalForm.elements.name.value.trim();
-  const userEmail = contactModalForm.elements.email.value.trim();
-  const userMessage = contactModalForm.elements.message.value.trim();
+  const userName = contactModalForm.elements.name.value.trim().toLowerCase();
+  const userEmail = contactModalForm.elements.email.value.trim().toLowerCase();
+  const userMessage = contactModalForm.elements.message.value
+    .trim()
+    .toLowerCase();
 
   if (!userName || !userEmail) {
     iziToast.error({
