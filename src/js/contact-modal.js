@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const contactModal = document.querySelector('.backdrop-contact-modal');
 const closeBtnContactModal = document.querySelector('.modal-close-btn');
 const subtitleModal = document.querySelector('.contact-modal-text');
@@ -47,3 +50,38 @@ function onEscKeyPress(event) {
     closeContactModal();
   }
 }
+
+//  Submit Contact Form
+
+const contactModalForm = document.querySelector('.contact-modal-form');
+contactModalForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const userName = contactModalForm.elements.name.value.trim();
+  const userEmail = contactModalForm.elements.email.value.trim();
+  const userMessage = contactModalForm.elements.message.value.trim();
+
+  if (!userName || !userEmail) {
+    iziToast.error({
+      title: 'Error',
+      message: 'Please, fill in the Name and Email fields!',
+      position: 'topRight',
+    });
+    return;
+  }
+
+  iziToast.success({
+    title: 'Congratulations!',
+    message: 'Data sent. Have a nice day)',
+    position: 'topRight',
+  });
+
+  const userData = {
+    name: userName,
+    email: userEmail,
+    message: userMessage,
+  };
+  console.log(userData);
+
+  contactModalForm.reset();
+});
