@@ -1,5 +1,5 @@
 .events {
-  background-color: #f6eee7;
+  background: #fceee6;
   padding: 64px 0;
 }
 
@@ -30,7 +30,7 @@ font-size: 18px;
 }
 
 .event-item {
-  background-color: #f6eee7;
+  background:#fceee6;
 }
 
 .event-img {
@@ -75,17 +75,7 @@ font-size: 18px;
 }
 
 /* Swiper */
-/* .swiper-pagination {
-  text-align:  right;
-  margin-top: 16px;
-}
 
-.swiper-button-prev {
-  right: 56px;
-  left: auto;
-}
-
- */
 .swiper-pagination {
   text-align:  right;
   margin-top: 16px;
