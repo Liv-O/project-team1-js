@@ -3,12 +3,6 @@
     padding-bottom: 64px;
 }
 
-.article-container {
-    
-}
-
-
-
 .article-title {
     font-weight: 600;
     font-size: 36px;
@@ -48,6 +42,10 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .article-text {
+        margin-bottom: 0;
     }
     
 }
