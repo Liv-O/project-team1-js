@@ -2,15 +2,15 @@ import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
 // Підключаємо базові стилі Swiper
-import 'swiper/css';
+// import 'swiper/css';
 // import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
 
 // Ініціалізація Swiper
 const swiper = new Swiper('.swiper-div', {
   modules: [Navigation, Pagination],
-  loop: true,
-//   slidesPerView: 1,
+  loop: false,
+  //   slidesPerView: 1,
   spaceBetween: 24,
 
   pagination: {
@@ -27,6 +27,7 @@ const swiper = new Swiper('.swiper-div', {
   breakpoints: {
     0: {
       slidesPerView: 1,
+      spaceBetween: 24,
     },
     768: {
       slidesPerView: 2,
