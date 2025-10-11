@@ -7,9 +7,9 @@ const subtitleModal = document.querySelector('.contact-modal-text');
 
 //  JS-code for section Events Booksy
 
-// const eventList = document.querySelector('.event-list');
+// const eventList = document.querySelector('.events-list');
 // eventList.addEventListener("click", (event) => {
-//   const openBtn = event.target.closest(".open-contact-modal-btn");
+//   const openBtn = event.target.closest(".event-btn");
 //   if (!openBtn) {
 //     return;
 //   }
@@ -17,7 +17,7 @@ const subtitleModal = document.querySelector('.contact-modal-text');
 //   if (!eventItem) {
 //     return;
 //   }
-//   const eventTitle = eventItem.querySelector(".event-title").textContent;
+//   const eventTitle = eventItem.querySelector(".event-subtitle").textContent;
 //   subtitleModal.textContent = eventTitle;
 
 //   openBtnContactModal();
