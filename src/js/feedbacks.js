@@ -1,16 +1,9 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
 
-// Підключаємо базові стилі Swiper
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-
-// Ініціалізація Swiper
 const swiperDiv = new Swiper('.swiper-div', {
   modules: [Navigation, Pagination, Keyboard, Mousewheel],
   loop: false,
-  //   slidesPerView: 1,
   spaceBetween: 24,
 
   pagination: {
