@@ -21,22 +21,26 @@
 }
 
 .swiper-div {
-  position: relative;
   overflow: hidden;
 }
+
 .swiper-wrapper {
+}
+.ul-swiper-wrapper {
   margin-bottom: 32px;
   display: flex;
 }
 
 .swiper-slide {
-  flex-shrink: 0;
-  width: 100%;
 }
 .feedbacks-item {
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
   padding: 32px;
+  flex-shrink: 0;
+}
+.ul-swiper-wrapper:focus {
+  outline: unset;
 }
 
 .container-comments {
@@ -84,23 +88,21 @@
   justify-content: space-between;
 }
 
-.swiper-pagination {
+.pagination {
   display: flex;
   gap: 8px;
 }
 .swiper-pagination-bullet {
-  width: 8px;
+  width: 9px;
   height: 9px;
-  width: 10px;
-  height: 10px;
-  background: #ccc;
+  background-color: #ccc;
   border-radius: 50%;
   opacity: 0.7;
   cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
-  background: #0b0500;
+  background-color: #0b0500;
   opacity: 1;
 }
 
@@ -121,15 +123,15 @@
   padding: 12px;
   width: 48px;
   height: 48px;
-  background: #e15d05;
-  cursor: pointer;
-  transition: background 0.2s;
+  background-color: #e15d05;
   outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .button-svg:hover,
 .button-svg:focus {
-  background: #fff;
+  background-color: #fff;
 }
 
 .button-svg:hover .icon-arrow,
@@ -138,24 +140,18 @@
 }
 
 .button-svg:active {
-  background: #5a2502;
+  background-color: #5a2502;
 }
 
 .button-svg:active .icon-arrow {
   fill: #fff;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
 .swiper-button-disabled {
   opacity: 0.2;
   cursor: not-allowed;
   pointer-events: none;
-  background: #e15d05;
+  background-color: #e15d05;
 }
 
 .swiper-button-disabled .icon-arrow {
@@ -172,10 +168,5 @@
 @media screen and (min-width: 1440px) {
   .feedbacks-title-main {
     font-size: 48px;
-  }
-
-  .pagination-button {
-    justify-content: start;
-    gap: 40px;
   }
 }

@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
 
 // Підключаємо базові стилі Swiper
 // import 'swiper/css';
@@ -7,8 +7,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 // import 'swiper/css/pagination';
 
 // Ініціалізація Swiper
-const swiper = new Swiper('.swiper-div', {
-  modules: [Navigation, Pagination],
+const swiperDiv = new Swiper('.swiper-div', {
+  modules: [Navigation, Pagination, Keyboard, Mousewheel],
   loop: false,
   //   slidesPerView: 1,
   spaceBetween: 24,
@@ -23,17 +23,40 @@ const swiper = new Swiper('.swiper-div', {
     prevEl: '.swiper-button-prev',
     addIcons: false,
   },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+
+  mousewheel: {
+    forceToAxis: true,
+  },
+
+  simulateTouch: true,
 
   breakpoints: {
     0: {
       slidesPerView: 1,
-      spaceBetween: 24,
     },
     768: {
       slidesPerView: 2,
     },
-    1024: {
+    1440: {
       slidesPerView: 3,
     },
   },
+});
+
+const swiperUL = document.querySelector('.swiper-wrapper');
+
+swiperUL.addEventListener('keydown', event => {
+  if (event.key === 'Tab') {
+    event.preventDefault();
+
+    if (event.shiftKey) {
+      swiperDiv.slidePrev();
+    } else {
+      swiperDiv.slideNext();
+    }
+  }
 });
