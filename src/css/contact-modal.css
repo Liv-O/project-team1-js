@@ -26,9 +26,9 @@
   padding: 64px 16px;
   background-color: #fceee6;
   position: absolute;
-  top: 64px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .modal-close-btn {
