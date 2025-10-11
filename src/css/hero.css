@@ -88,7 +88,7 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  color: #fff;
+  color: #0b0500;
   border: 1px solid rgba(11, 5, 0, 0.15);
   background-color: #e15d05;
   cursor: pointer;
@@ -98,11 +98,10 @@
 
 .hero-slider-button:hover,
 .hero-slider-button:focus {
-  color: #0b0500;
   background-color: #fceee6;
 }
 
-.hero-slider-button:focus {
+.hero-slider-button:active {
   color: #fff;
   background-color: #5a2502;
 }
