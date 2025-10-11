@@ -1,11 +1,8 @@
 .location {
   width: 100%;
-  /* min-width: 320px; */
-  /* max-width: auto; */
   padding-top: 64px;
   padding-bottom: 64px;
   box-sizing: border-box;
-  /* margin: 0 auto; */
   display: block;
 }
 
@@ -110,10 +107,6 @@ iframe {
   .location-text {
     max-width: 732px;
   }
-
-  /* .location-item {
-    gap: 24px;
-  } */
 
   iframe {
     max-width: 1312px;
