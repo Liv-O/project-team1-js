@@ -34,3 +34,28 @@ new Swiper(".events-swiper", {
     },
   },
 });
+
+//  JS-code for section Events Booksy
+
+const eventList = document.querySelector('.events-list');
+eventList.addEventListener("click", (event) => {
+  const openBtn = event.target.closest(".event-btn");
+  if (!openBtn) {
+    return;
+  }
+  const eventItem = openBtn.closest(".event-item");
+  if (!eventItem) {
+    return;
+  }
+  const eventTitle = eventItem.querySelector(".event-subtitle").textContent;
+  subtitleModal.textContent = eventTitle;
+
+  openBtnContactModal();
+});
+
+function openBtnContactModal() {
+  contactModal.classList.remove("window-is-invisible");
+  document.body.classList.add("not-scrolling-page");
+
+  document.addEventListener("keydown", onEscKeyPress);
+}
