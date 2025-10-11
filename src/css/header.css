@@ -1,9 +1,10 @@
 .header {
     display: block;
-    background-color: #fceee6;
+height: 64px;
     width: 100%;
     position: relative;
     z-index: 10;
+    background-color: #fceee6;
 }
 
 .header-container {
@@ -11,14 +12,16 @@
     align-items: center;
     justify-content: space-between; 
     width: 100%;
+    background-color: transparent;
+    padding: 14px 20px;
 }
 
 
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 32px; 
-    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex: 1; /* розтягуємо, щоб space-between працював */
 }
 
 .header-logo {
@@ -116,8 +119,9 @@
       transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
       opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10000;
-    padding-top: 14px;
-    padding-bottom: 92px;
+    padding : 14px 20px 43px 20px;
+    /* padding-top: 14px;
+    padding-bottom: 43px; */
 }
 .mob-menu-nav {
     display: flex;
@@ -149,6 +153,12 @@
 
 
 @media screen and (min-width: 768px) {
+    .header {
+        height: 72px;
+      }
+      .header-container {
+        padding: 16px 32px;
+      }
     .menu-btn {
         display: none; 
     }
@@ -162,8 +172,12 @@
     .icon-logo {
         width: 80px;
         height: 40px;
+        margin-right: auto;
     }
 }
 
 @media screen and (min-width: 1440px) {
+    .header-container {
+        padding: 16px 64px;
+    }
  }
