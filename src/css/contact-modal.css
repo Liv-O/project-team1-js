@@ -177,8 +177,15 @@
 
 .contact-submit-btn:hover,
 .contact-submit-btn:focus {
-  border: none;
   background-color: #0b0500;
+}
+
+.contact-submit-btn:focus:active {
+  background-color: #0b0500;
+}
+
+.contact-submit-btn:focus:not(:active):not(:hover) {
+  background-color: #e15d05;
 }
 
 .not-scrolling-page {
