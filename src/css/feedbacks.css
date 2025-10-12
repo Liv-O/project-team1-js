@@ -1,0 +1,172 @@
+.feedbacks {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.feedbacks-div-title {
+  margin-bottom: 80px;
+}
+
+.feedbacks-title-main {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.feedbacks-title-litle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.swiper-div {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+}
+.ul-swiper-wrapper {
+  margin-bottom: 32px;
+  display: flex;
+}
+
+.swiper-slide {
+}
+.feedbacks-item {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  flex-shrink: 0;
+}
+.ul-swiper-wrapper:focus {
+  outline: unset;
+}
+
+.container-comments {
+}
+
+.feedbacks-comments {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  min-height: 108px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 70px;
+}
+
+.feedbacks-comments-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+
+.user-details {
+}
+
+.feedbacks-comments-name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.feedbacks-comments-description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+}
+.swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background-color: #ccc;
+  border-radius: 50%;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0b0500;
+  opacity: 1;
+}
+
+.conteiner-button-svg {
+  display: flex;
+  gap: 16px;
+}
+.icon-arrow {
+  display: block;
+  fill: #fff;
+  transition: fill 0.2s;
+}
+.button-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #e15d05;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-svg:hover,
+.button-svg:focus {
+  background-color: #fff;
+}
+
+.button-svg:hover .icon-arrow,
+.button-svg:focus .icon-arrow {
+  fill: #0b0500;
+}
+
+.button-svg:active {
+  background-color: #5a2502;
+}
+
+.button-svg:active .icon-arrow {
+  fill: #fff;
+}
+
+.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #e15d05;
+}
+
+.swiper-button-disabled .icon-arrow {
+  fill: #0b0500;
+}
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+  .user-info {
+    margin-bottom: 0;
+  }
+}
+/* Leptop */
+@media screen and (min-width: 1440px) {
+  .feedbacks-title-main {
+    font-size: 48px;
+  }
+}
