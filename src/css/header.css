@@ -1,3 +1,6 @@
+.hidden {
+    display: none;
+}
 
 .header {
     display: block;
