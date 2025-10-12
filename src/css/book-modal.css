@@ -215,9 +215,7 @@
 }
 
 .book-modal-item {
-  background: transparent;
   border-top: 1px solid rgba(11, 5, 0, 0.15);
-  margin: 0;
 }
 
 .book-modal-item:last-child {
@@ -230,9 +228,14 @@
 
 .accordion-container {
 }
-.ac {
+
+.accordion-container .ac {
+  margin: 0;
+  background: #fceee6;
 }
+
 .ac-header {
+  border-top: 1px solid rgba(11, 5, 0, 0.15);
 }
 
 .accordion-container .ac .ac-header {
@@ -277,12 +280,13 @@
 
   /* line-height: 24px; */
   line-height: 1.5;
-  padding-bottom: 0;
+  margin-bottom: 0;
   overflow: hidden;
+  transition: margin-bottom 300ms ease;
 }
 
 .ac.is-active .ac-panel {
-  padding-bottom: 28px;
+  margin-bottom: 28px;
 }
 
 .not-scrolling-page {

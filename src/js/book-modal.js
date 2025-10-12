@@ -94,12 +94,16 @@ const plusBtn = document.querySelector('.add-book-btn');
 const addToCartBtn = document.querySelector('.add-to-cart-btn');
 const buyNowBtn = document.querySelector('.buy-now-btn');
 
+function getQuantity() {
+  return Number(quantityInput.value);
+}
+
 plusBtn.addEventListener('click', () => {
-  quantityInput.value = Number(quantityInput.value) + 1;
+  quantityInput.value = getQuantity() + 1;
 });
 
 minusBtn.addEventListener('click', () => {
-  const currentValue = Number(quantityInput.value);
+  const currentValue = getQuantity();
   if (currentValue > 1) {
     quantityInput.value = currentValue - 1;
   }
@@ -108,12 +112,11 @@ minusBtn.addEventListener('click', () => {
 addToCartBtn.addEventListener('click', event => {
   event.preventDefault();
 
-  const quantity = Number(quantityInput.value);
-  console.log('Number of selected books: ', quantity);
+  console.log('Number of selected books:', getQuantity());
 
   iziToast.success({
     title: 'Success',
-    message: `Added ${quantity} book(s) to cart`,
+    message: `Added ${getQuantity()} book(s) to cart`,
     position: 'topRight',
   });
 });
