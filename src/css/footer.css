@@ -148,7 +148,6 @@ body {
 }
 .footer-btn:focus:not(:active):not(:hover) {
   background-color: initial;
-  border: initial;
 }
 .footer-form-container {
   display: flex;
