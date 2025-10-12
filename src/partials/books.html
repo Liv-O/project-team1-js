@@ -1,6 +1,6 @@
 <section id="books">
-  <div class="books-container">
-    <h2 class="hidden">Trending books</h2>
+  <div class="container books-container">
+    <h2 class="books-hidden">Trending books</h2>
     
     <div class="books-header-container">
       <div class="books-header">
@@ -9,19 +9,25 @@
       </div>
 
       <div class="categories-dropdown-wrapper">
-        <button type="button" class="categories-dropdown-btn">Categories<span class="dropdown-arrow"></span></button>
-        <ul class="categories-dropdown-list hidden" id="books-categories-dropdown-list"></ul>
+        <button type="button" class="categories-dropdown-btn">
+          <span class="categories-dropdown-text">Categories</span>
+          <svg class="categories-dropdown-icon">
+            <use href="../img/sprite-opt.svg#icon-lower-corner"></use>
+          </svg>
+        </button>
+        <ul class="categories-dropdown-list books-hidden" id="books-categories-dropdown-list"></ul>
       </div>
+
       <div class="desktop-categories-wrapper">
-      <ul class="books-categories-desktop" id="books-categories-desktop-list"></ul>
-    </div>
+        <ul class="books-categories-desktop" id="books-categories-desktop-list"></ul>
+      </div>
     </div>
     
     <div>
       <div>
         <ul class="books-list"></ul>
       </div>
-      <button class="books-load-more hidden" type="button">Show More</button>
+      <button class="books-load-more books-hidden" type="button">Show More</button>
     </div>
   </div>
 </section>
