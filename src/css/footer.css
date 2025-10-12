@@ -54,6 +54,7 @@ body {
 }
 .footer-anchor-link {
   font-weight: 400;
+  line-height: 1.5;
   font-size: 16px;
   transition: 250ms ease-in;
 }
@@ -149,6 +150,12 @@ body {
 }
 .footer-btn:focus:not(:active):not(:hover) {
   background-color: initial;
+}
+.footer-form-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #0b0500;
 }
 .footer-form-container {
   display: flex;

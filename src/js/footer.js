@@ -10,7 +10,7 @@ emailForm.addEventListener('submit', e => {
   e.preventDefault();
   iziToast.destroy();
 
-  const valueEmail = emailInput.value.toLo.trim().toLowerCase();
+  const valueEmail = emailInput.value.trim().toLowerCase();
   if (valueEmail === '') {
     iziToast.show({
       message: 'Поле e-mail не може бути порожнім!',
