@@ -117,6 +117,14 @@
   background-color: #ea8d50;
 }
 
+.neg-book-btn:focus:active {
+  background-color: #ea8d50;
+}
+
+.neg-book-btn:focus:not(:active):not(:hover) {
+  background-color: initial;
+}
+
 .quantity-book {
   width: 42px;
   height: 40px;
@@ -163,6 +171,14 @@
   background-color: #ea8d50;
 }
 
+.add-book-btn:focus:active {
+  background-color: #ea8d50;
+}
+
+.add-book-btn:focus:not(:active):not(:hover) {
+  background-color: initial;
+}
+
 .add-to-cart-btn {
   display: block;
   margin-bottom: 24px;
@@ -187,6 +203,14 @@
   background-color: #0b0500;
 }
 
+.add-to-cart-btn:focus:active {
+  background-color: #0b0500;
+}
+
+.add-to-cart-btn:focus:not(:active):not(:hover) {
+  background-color: #e15d05;
+}
+
 .buy-now-btn {
   display: block;
   background-color: transparent;
@@ -208,6 +232,14 @@
 .buy-now-btn:hover,
 .buy-now-btn:focus {
   background-color: #ea8d50;
+}
+
+.buy-now-btn:focus:active {
+  background-color: #ea8d50;
+}
+
+.buy-now-btn:focus:not(:active):not(:hover) {
+  background-color: initial;
 }
 
 .book-modal-list {
