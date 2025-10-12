@@ -1,3 +1,6 @@
+body {
+  scroll-behavior: smooth;
+}
 .footer {
   background-color: #ea8d50;
   width: 100%;
@@ -47,6 +50,12 @@
 }
 .footer-anchor-link:focus {
   opacity: 0.3;
+}
+.footer-anchor-link:active {
+  opacity: 0.3;
+}
+.footer-anchor-link:focus:not(:active):not(:hover) {
+  opacity: initial;
 }
 .footer-form-join {
   line-height: 1.5;
@@ -121,6 +130,13 @@
 .footer-btn:focus {
   border: 1px solid #0b0500;
   background-color: #e15d05;
+}
+.footer-btn:active {
+  border: 1px solid #0b0500;
+  background-color: #e15d05;
+}
+.footer-btn:focus:not(:active):not(:hover) {
+  background-color: initial;
 }
 .footer-form-container {
   display: flex;
