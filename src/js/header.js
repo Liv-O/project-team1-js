@@ -1,11 +1,13 @@
 const menuBtn = document.querySelector('.open-menu');
 const closeBtn = document.querySelector('.close-menu');
 const mobMenu = document.querySelector('.mob-menu');
-const menuLinks = document.querySelectorAll('.menu-link, .header-link');
+
+const mobileMenuLinks = document.querySelectorAll('.menu-link');
 
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 if (mobMenu && isMobile) {
+
   const onEscPress = (e) => {
     if (e.key === 'Escape') closeMenu();
   };
@@ -16,6 +18,7 @@ if (mobMenu && isMobile) {
 
   const onLinkClick = (e) => {
     e.preventDefault();
+
     const targetID = e.currentTarget.getAttribute('href');
     const targetSection = document.querySelector(targetID);
 
@@ -27,7 +30,8 @@ if (mobMenu && isMobile) {
     }
 
     e.currentTarget.blur();
-    if (e.currentTarget.classList.contains('menu-link')) closeMenu();
+
+    closeMenu();
   };
 
   const openMenu = () => {
@@ -37,7 +41,8 @@ if (mobMenu && isMobile) {
     document.addEventListener('keydown', onEscPress);
     mobMenu.addEventListener('click', onOverlayClick);
     closeBtn?.addEventListener('click', closeMenu);
-    menuLinks.forEach((link) => link.addEventListener('click', onLinkClick));
+
+    mobileMenuLinks.forEach(link => link.addEventListener('click', onLinkClick));
   };
 
   const closeMenu = () => {
@@ -47,7 +52,8 @@ if (mobMenu && isMobile) {
     document.removeEventListener('keydown', onEscPress);
     mobMenu.removeEventListener('click', onOverlayClick);
     closeBtn?.removeEventListener('click', closeMenu);
-    menuLinks.forEach((link) => link.removeEventListener('click', onLinkClick));
+
+    mobileMenuLinks.forEach(link => link.removeEventListener('click', onLinkClick));
   };
 
   menuBtn?.addEventListener('click', openMenu);
