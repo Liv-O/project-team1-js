@@ -8,6 +8,7 @@ const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 emailForm.addEventListener('submit', e => {
   e.preventDefault();
+  iziToast.destroy();
 
   const valueEmail = emailInput.value.trim();
   if (valueEmail === '') {
