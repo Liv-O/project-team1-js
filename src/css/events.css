@@ -115,14 +115,19 @@ margin-bottom: 32px;
   justify-content: center;
 }
 
+.swiper-svg-button-prev:hover,
+.swiper-svg-button-next:hover,
+.swiper-svg-button-prev:focus,
+.swiper-svg-button-next:focus{
+fill: #0b0500;
+}
+
 .events .swiper .swiper-pagination {
   position: static;
   transform: none;
   width: auto;
   margin: 0;
 }
-
-
 
 .swiper .swiper-pagination :first-child {
   margin-left: 0;
@@ -184,6 +189,7 @@ margin-bottom: 32px;
   background: #5a2502;
   fill: #ffffff;
 }
+
 
 .swiper-button-prev:disabled,
 .swiper-button-next:disabled { 
