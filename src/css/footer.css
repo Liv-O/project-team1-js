@@ -1,6 +1,11 @@
 body {
   scroll-behavior: smooth;
 }
+footer {
+  background-color: #ea8d50;
+  width: 100%;
+  padding: 80px 0;
+}
 .footer {
   background-color: #ea8d50;
   width: 100%;
@@ -89,7 +94,7 @@ body {
   min-width: 0;
   padding: 0 12px;
   margin-bottom: 12px;
-  width: 221px;
+  width: 100%;
   transition: border-color 0.3s, box-shadow 0.3s;
   height: 48px;
 }
