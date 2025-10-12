@@ -18,8 +18,7 @@ let currentCategory = "all";
 const SHOW_MORE_QUANTITY = 4;
 
 function getInitialBooksLimit() {
-  const screenWidth = window.innerWidth;
-  return screenWidth >= 1440 ? 24 : 10;
+  return window.innerWidth >= 1440 ? 24 : 10;
 }
 
 function renderBooks() {
@@ -49,64 +48,62 @@ function renderBooks() {
   `).join('');
 
   booksShown.textContent = `Showing ${booksToRender.length} of ${allBooksData.length} books`;
-
   booksLoadMoreBtn.classList.toggle('books-hidden', currentBooksLimit >= allBooksData.length);
 }
 
-async function loadCategories() {
-  booksCategoriesDesktopList.innerHTML = '<li>Loading categories...</li>';
-  booksCategoriesDropdownList.innerHTML = '<li>Loading categories...</li>';
-
-  try {
-    const response = await axios.get('/category-list');
-    const data = response.data;
-
-    let desktopCategoriesHtml = '<li class="category-list-item active" data-category-name="all">All categories</li>';
-    let dropdownCategoriesHtml = '<li class="category-list-item active" data-category-name="all">All categories</li>';
-
-    data.forEach(category => {
-      if (category.list_name && category.list_name.trim()) {
-        desktopCategoriesHtml += `<li class="category-list-item" data-category-name="${category.list_name}">${category.list_name}</li>`;
-        dropdownCategoriesHtml += `<li class="category-list-item" data-category-name="${category.list_name}">${category.list_name}</li>`;
-      }
-    });
-
-    booksCategoriesDesktopList.innerHTML = desktopCategoriesHtml;
-    booksCategoriesDropdownList.innerHTML = dropdownCategoriesHtml;
-
-    booksCategoriesDesktopList.querySelectorAll('.category-list-item').forEach(item => {
-      item.addEventListener('click', event => {
-        setActiveCategory(booksCategoriesDesktopList, event.target);
-        loadBooks(event.target.dataset.categoryName);
-      });
-    });
-
-    booksCategoriesDropdownList.querySelectorAll('.category-list-item').forEach(item => {
-      item.addEventListener('click', event => {
-        setActiveCategory(booksCategoriesDropdownList, event.target);
-        loadBooks(event.target.dataset.categoryName);
-        const dropdownText = categoriesDropdownBtn.querySelector('.categories-dropdown-text');
-        dropdownText.textContent = event.target.textContent;
-        booksCategoriesDropdownList.classList.add('books-hidden');
-      });
-    });
-
-    const initialActive = booksCategoriesDropdownList.querySelector('.category-list-item.active');
-    if (initialActive) {
-      const dropdownText = categoriesDropdownBtn.querySelector('.categories-dropdown-text');
-      dropdownText.textContent = initialActive.textContent;
+function createCategoryHtml(categories) {
+  let html = `<li class="category-list-item active" data-category-name="all">All categories</li>`;
+  categories.forEach(cat => {
+    if (cat.list_name?.trim()) {
+      html += `<li class="category-list-item" data-category-name="${cat.list_name}">${cat.list_name}</li>`;
     }
-
-  } catch (error) {
-    booksCategoriesDesktopList.innerHTML = '<li>Error loading categories</li>';
-    booksCategoriesDropdownList.innerHTML = '<li>Error loading categories</li>';
-  }
+  });
+  return html;
 }
 
 function setActiveCategory(container, clickedItem) {
   const currentActive = container.querySelector('.category-list-item.active');
   if (currentActive) currentActive.classList.remove('active');
   clickedItem.classList.add('active');
+}
+
+function addCategoryListeners(container, isDropdown = false) {
+  container.querySelectorAll('.category-list-item').forEach(item => {
+    item.addEventListener('click', event => {
+      setActiveCategory(container, event.target);
+      loadBooks(event.target.dataset.categoryName);
+
+      if (isDropdown) {
+        const dropdownText = categoriesDropdownBtn.querySelector('.categories-dropdown-text');
+        dropdownText.textContent = event.target.textContent;
+        container.classList.add('books-hidden');
+      }
+    });
+  });
+}
+
+async function loadCategories() {
+  const isMobile = window.innerWidth < 1440;
+  const activeContainer = isMobile ? booksCategoriesDropdownList : booksCategoriesDesktopList;
+
+  activeContainer.innerHTML = '<li>Loading categories...</li>';
+
+  try {
+    const { data } = await axios.get('/category-list');
+    const html = createCategoryHtml(data);
+    activeContainer.innerHTML = html;
+
+    addCategoryListeners(activeContainer, isMobile);
+
+    if (isMobile) {
+      const dropdownText = categoriesDropdownBtn.querySelector('.categories-dropdown-text');
+      const initialActive = activeContainer.querySelector('.category-list-item.active');
+      dropdownText.textContent = initialActive?.textContent || 'All categories';
+    }
+
+  } catch (error) {
+    activeContainer.innerHTML = '<li>Error loading categories</li>';
+  }
 }
 
 async function loadBooks(category, isLoadMore = false) {
@@ -125,14 +122,12 @@ async function loadBooks(category, isLoadMore = false) {
 
   try {
     if (!allBooksData.length || !isLoadMore) {
-      const response = await axios.get(url);
-      const data = response.data;
+      const { data } = await axios.get(url);
 
       let tempAllBooks = [];
-
       if (category === "all") {
         data.forEach(cat => {
-          if (cat.books && Array.isArray(cat.books)) tempAllBooks.push(...cat.books);
+          if (cat.books?.length) tempAllBooks.push(...cat.books);
         });
       } else {
         tempAllBooks = data;
@@ -158,29 +153,23 @@ async function loadBooks(category, isLoadMore = false) {
 
 function toTitleCase(str) {
   if (!str) return '';
-  return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  return str.toLowerCase().split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 booksLoadMoreBtn.addEventListener('click', () => loadBooks(currentCategory, true));
-
 categoriesDropdownBtn.addEventListener('click', () => booksCategoriesDropdownList.classList.toggle('books-hidden'));
 
-document.addEventListener('click', event => {
-  if (!categoriesDropdownWrapper.contains(event.target) && !booksCategoriesDropdownList.classList.contains('books-hidden')) {
+document.addEventListener('click', e => {
+  if (!categoriesDropdownWrapper.contains(e.target) && !booksCategoriesDropdownList.classList.contains('books-hidden')) {
     booksCategoriesDropdownList.classList.add('books-hidden');
   }
 });
 
-loadCategories().then(() => loadBooks("all"));
-
-
-booksList.addEventListener('click', event => {
-  if (!event.target.classList.contains('book-item-btn')) return
-  
-  const bookId = event.target.dataset.bookId;
-
-  console.log(bookId);
-
+booksList.addEventListener('click', async e => {
+  if (!e.target.classList.contains('book-item-btn')) return;
+  const bookId = e.target.dataset.bookId;
   //openBookModal();
   //await fetchBookId(bookId);
-})
+});
+
+loadCategories().then(() => loadBooks("all"));

@@ -220,9 +220,12 @@
 }
 
 .book-item-btn:hover,
-.book-item-btn:focus,
+.book-item-btn:focus {
+  background-color: #ea8d50;
+}
+
 .book-item-btn:active {
-  background: #ea8d50;
+  background-color: #dad9d8;;
 }
 
 .book-item-btn:focus:not(:active):not(:hover) {
@@ -249,6 +252,11 @@
 .books-load-more:focus,
 .books-load-more:active {
   background: #0b0500;
+  border: none;
+}
+
+.books-load-more:active {
+  background-color: #b44a04;
   border: none;
 }
 
