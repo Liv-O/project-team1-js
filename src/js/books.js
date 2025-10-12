@@ -24,7 +24,7 @@ function getInitialBooksLimit() {
 
 function renderBooks() {
   if (!allBooksData.length) {
-    booksList.innerHTML = "<li>No books found</li>";
+    booksList.innerHTML = "<li class='books-list-problem'>No books found</li>";
     booksShown.textContent = "0 books";
     booksLoadMoreBtn.classList.add('books-hidden');
     return;
@@ -111,7 +111,7 @@ function setActiveCategory(container, clickedItem) {
 
 async function loadBooks(category, isLoadMore = false) {
   if (!isLoadMore) {
-    booksList.innerHTML = "<li>Loading books...</li>";
+    booksList.innerHTML = "<li class='books-list-problem'>Loading books...</li>";
     booksShown.textContent = "";
     booksLoadMoreBtn.classList.add('books-hidden');
     currentBooksLimit = getInitialBooksLimit();
@@ -150,7 +150,7 @@ async function loadBooks(category, isLoadMore = false) {
     renderBooks();
 
   } catch (error) {
-    booksList.innerHTML = "<li>Error loading books</li>";
+    booksList.innerHTML = "<li class='books-list-problem'>Error loading books</li>";
     booksShown.textContent = "Error";
     booksLoadMoreBtn.classList.add('books-hidden');
   }
