@@ -1,0 +1,54 @@
+<!-- @Denys Kratyk -->
+
+<div class="backdrop-contact-modal window-is-invisible">
+  <div class="contact-modal">
+    <button type="button" class="modal-close-btn">
+      <svg class="modal-close-btn-icon" width="16" height="16">
+        <use href="/img/sprite-opt.svg#icon-cross"></use>
+      </svg>
+    </button>
+    <h2 class="contact-modal-title">Register</h2>
+    <p class="contact-modal-text">Cozy Book Club — "The Midnight Library"</p>
+    <form action="#" class="contact-modal-form">
+      <div class="contact-modal-field">
+        <label for="user-name" class="modal-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="user-name"
+          class="modal-input"
+          placeholder="Anna"
+          required
+          maxlength="60"
+        />
+        <p class="text-invalid">The field is up to 60 characters long!</p>
+      </div>
+      <div class="contact-modal-field">
+        <label for="user-email" class="modal-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="user-email"
+          class="modal-input"
+          placeholder="hello@booksy.com"
+          required
+        />
+        <p class="text-invalid">Invalid email address format!</p>
+      </div>
+      <div class="contact-modal-field">
+        <label for="user-message" class="modal-label">Message</label>
+        <textarea
+          name="message"
+          id="user-message"
+          class="modal-input modal-textarea"
+          placeholder="Type your message..."
+          maxlength="500"
+        ></textarea>
+        <p class="text-invalid">
+          The maximum message length is 500 characters!
+        </p>
+      </div>
+      <button type="submit" class="contact-submit-btn">Register</button>
+    </form>
+  </div>
+</div>

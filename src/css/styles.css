@@ -1,10 +1,9 @@
-
 /* Common styles */
 @import url('./reset.css');
 @import url('./container.css');
 
-
 /* Sections style */
+@import url('./sliders.css');
 @import url('./header.css');
 @import url('./hero.css');
 @import url('./books.css');
