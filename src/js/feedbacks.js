@@ -1,8 +1,7 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
 
-const swiperDiv = new Swiper('.swiper-div', {
-  modules: [Navigation, Pagination, Keyboard, Mousewheel],
+const feedbackSlider = new Swiper('.swiper-div', {
+  // modules: [Navigation, Pagination, Keyboard, Mousewheel],
   loop: false,
   spaceBetween: 24,
 
@@ -12,8 +11,8 @@ const swiperDiv = new Swiper('.swiper-div', {
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.feedbacks-button-next',
+    prevEl: '.feedbacks-button-prev',
     addIcons: false,
   },
   keyboard: {
@@ -47,9 +46,9 @@ swiperUL.addEventListener('keydown', event => {
     event.preventDefault();
 
     if (event.shiftKey) {
-      swiperDiv.slidePrev();
+      feedbackSlider.slidePrev();
     } else {
-      swiperDiv.slideNext();
+      feedbackSlider.slideNext();
     }
   }
 });
