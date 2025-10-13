@@ -33,7 +33,7 @@ const BASE_URL = 'https://books-backend.p.goit.global/';
 //   document.addEventListener('keydown', onEscKeyPressInBookModal);
 // }
 
-async function fetchBookId(id) {
+export async function fetchBookId(id) {
   try {
     const response = await axios.get(`${BASE_URL}books/${id}`);
     const book = response.data;
@@ -58,7 +58,7 @@ function renderBook(book) {
   `;
 }
 
-function openBookModal() {
+export function openBookModal() {
   bookModal.classList.remove('window-is-invisible');
   document.body.classList.add('not-scrolling-page');
 
