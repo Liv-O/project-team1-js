@@ -1,8 +1,9 @@
-
-
 import Swiper from 'swiper/bundle';
+import { openBtnContactModal } from './contact-modal';
+
 
 const eventsSlider = new Swiper('.events-swiper', {
+  spaceBetween: 24,
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -19,11 +20,9 @@ const eventsSlider = new Swiper('.events-swiper', {
   breakpoints: {
     375: {
       slidesPerView: 1,
-      spaceBetween: 20,
     },
     768: {
       slidesPerView: 2,
-      spaceBetween: 24,
     },
     1440: {
       slidesPerView: 3,
@@ -46,14 +45,8 @@ eventList.addEventListener("click", (event) => {
     return;
   }
   const eventTitle = eventItem.querySelector(".event-subtitle").textContent;
-  subtitleModal.textContent = eventTitle;
+  // subtitleModal.textContent = eventTitle;
 
-  openBtnContactModal();
+  openBtnContactModal(eventTitle);
 });
 
-function openBtnContactModal() {
-  contactModal.classList.remove("window-is-invisible");
-  document.body.classList.add("not-scrolling-page");
-
-  document.addEventListener("keydown", onEscKeyPress);
-}
