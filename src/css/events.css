@@ -25,7 +25,10 @@
 font-weight: 400;
 font-size: 18px;
 margin-bottom: 32px;
+white-space: normal;
+  overflow-wrap: break-word;
 }
+
 
 .events-text-info {
   margin-bottom: 8px;
@@ -204,6 +207,10 @@ fill: #0b0500;
 .events-btn-icon-corner {
   width: 24px;
   height: 24px;
+}
+
+.event-btn:hover {
+  opacity: 0.2;
 }
 
 /* Tablet */
