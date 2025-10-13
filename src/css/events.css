@@ -1,0 +1,151 @@
+.events {
+  padding: 64px 0px;
+}
+
+.events .container {
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+.events-label {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.events-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.events-text {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.events-text-info {
+  margin-bottom: 8px;
+}
+
+/* Image styles */
+
+.events-image {
+  border-radius: 16px;
+  width: 421px;
+  height: 277px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.events-swiper {
+  position: relative;
+}
+
+.event-item {
+  background: #fceee6;
+}
+
+.event-subtitle {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.event-format {
+  font-size: 16px;
+  color: #0b0500;
+  margin-bottom: 8px;
+}
+
+.event-desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.event-info-wrapper {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  line-height: 1.5;
+  align-items: center;
+}
+
+.event-btn:hover {
+  opacity: 0.2;
+} 
+
+
+.event-btn-icon {
+  width: 8px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.events-list {
+  margin-bottom: 32px;
+}
+
+
+.events .swiper .swiper-pagination {
+  position: static;
+  transform: none;
+  width: auto;
+  margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .events .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  .events-title {
+    font-size: 36px;
+  }
+
+  .events-button-prev,
+  .events-button-next {
+    bottom: 8px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  .events .container {
+    max-width: 1440px;
+    padding: 0 64px;
+  }
+
+  .events-title {
+    font-size: 48px;
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 32px;
+  }
+
+  .events-button-prev,
+  .events-button-next {
+    bottom: 0;
+    display: none;
+  }
+}
