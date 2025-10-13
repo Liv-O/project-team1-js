@@ -33,7 +33,7 @@ const BASE_URL = 'https://books-backend.p.goit.global/';
 //   document.addEventListener('keydown', onEscKeyPressInBookModal);
 // }
 
-async function fetchBookId(id) {
+export async function fetchBookId(id) {
   try {
     const response = await axios.get(`${BASE_URL}books/${id}`);
     const book = response.data;
@@ -50,7 +50,7 @@ async function fetchBookId(id) {
 }
 
 function renderBook(book) {
-  bookImgContainer.innerHTML = `<img src="${book.book_image}" alt="${book.title}" class="book-img" />`;
+  bookImgContainer.innerHTML = `<img src="${book.book_image}" alt="${book.title}" class="book-img" width="309" />`;
   bookModalInfo.innerHTML = `
   <h2 class="book-title">${book.title}</h2>
   <p class="book-author">${book.author}</p>
@@ -58,7 +58,7 @@ function renderBook(book) {
   `;
 }
 
-function openBookModal() {
+export function openBookModal() {
   bookModal.classList.remove('window-is-invisible');
   document.body.classList.add('not-scrolling-page');
 

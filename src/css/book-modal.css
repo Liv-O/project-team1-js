@@ -44,6 +44,12 @@
   cursor: pointer;
 }
 
+.book-img-container {
+  flex: 0 0 auto;
+  width: 309px;
+  height: auto;
+}
+
 .book-container {
 }
 
@@ -51,7 +57,7 @@
   display: flex;
   object-fit: contain;
   border-radius: 8px;
-  width: 309px;
+  width: 100%;
   height: 466px;
   margin-bottom: 24px;
 }
@@ -380,6 +386,10 @@
   .book-modal {
     width: 1300px;
     padding: 64px;
+  }
+
+  .book-img {
+    margin-bottom: 0;
   }
 
   .quantity {

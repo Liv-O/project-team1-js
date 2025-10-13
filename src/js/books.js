@@ -1,6 +1,6 @@
 import axios from "axios";
 
-//import { openBookModal, fetchBookId } from "./book-modal"
+import { openBookModal, fetchBookId } from "./book-modal"
 
 const booksCategoriesDesktopList = document.querySelector('#books-categories-desktop-list');
 const categoriesDropdownWrapper = document.querySelector('.categories-dropdown-wrapper');
@@ -168,8 +168,8 @@ document.addEventListener('click', e => {
 booksList.addEventListener('click', async e => {
   if (!e.target.classList.contains('book-item-btn')) return;
   const bookId = e.target.dataset.bookId;
-  //openBookModal();
-  //await fetchBookId(bookId);
+  openBookModal();
+  await fetchBookId(bookId);
 });
 
 loadCategories().then(() => loadBooks("all"));
