@@ -1,0 +1,230 @@
+.footer {
+  background-color: #ea8d50;
+  width: 100%;
+  padding: 80px 0;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 80px;
+  position: relative;
+}
+.footer-main::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 343px;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.footer-list-item {
+  text-align: center;
+}
+.footer-logo {
+  display: flex;
+  margin-bottom: 32px;
+  justify-content: center;
+  align-items: center;
+}
+.footer-logo-image {
+  width: 84px;
+  height: 36px;
+}
+.footer-anchor-link {
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 16px;
+  transition: 250ms ease-in;
+}
+
+.footer-anchor-link:hover {
+  opacity: 0.8;
+}
+.footer-anchor-link:focus {
+  opacity: 0.3;
+}
+.footer-anchor-link:active {
+  opacity: 0.3;
+}
+.footer-anchor-link:focus:not(:active):not(:hover) {
+  opacity: initial;
+}
+.footer-form-join {
+  line-height: 1.5;
+  color: #0b0500;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.footer-input {
+  border: 1px solid rgba(11, 5, 0, 0.15);
+  border-radius: 4px;
+  background-color: rgba(11, 5, 0, 0.05);
+  flex: 1;
+  min-width: 0;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  height: 48px;
+}
+.footer-input:focus {
+  outline: none;
+
+  box-shadow: 0 0 5px #999;
+}
+.footer-input:valid {
+  border-color: #228b22; /* тёмно-зелёный */
+  box-shadow: 0 0 5px #228b22;
+}
+.footer-input:invalid:not(:placeholder-shown) {
+  border-color: #b22222; /* тёмно-красный */
+  box-shadow: 0 0 5px #b22222;
+}
+.footer-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(11, 5, 0, 0.05) inset;
+  -webkit-text-fill-color: #0b0500;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.footer-input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  padding: 12px;
+  line-height: 1.5;
+  color: rgba(11, 5, 0, 0.6);
+}
+
+.footer-btn {
+  flex: 1;
+  border: 1px solid #0b0500;
+  border-radius: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  max-width: 106px;
+  height: 48px;
+  padding: 12px;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 16px;
+
+  line-height: 1.5;
+  color: #0b0500;
+  transition: 250ms ease-in;
+}
+.footer-btn:hover,
+.footer-btn:focus {
+  border: 1px solid #0b0500;
+  background-color: #e15d05;
+}
+.footer-btn:active {
+  border: 1px solid #0b0500;
+  background-color: #e15d05;
+}
+.footer-btn:focus:not(:active):not(:hover) {
+  background-color: initial;
+}
+.footer-form-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #0b0500;
+}
+.footer-form-container {
+  display: flex;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.copyrigth-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-copyrigth-text {
+  padding-top: 32px;
+}
+.footer-text-invalid,
+.footer-text-valid {
+  font-size: 12px;
+  line-height: 1.6;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-list {
+    flex-direction: row;
+  }
+  .footer-logo {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+  .footer-form {
+    width: 400px;
+  }
+  .footer-form-container {
+    margin: 0;
+  }
+
+  .footer-input {
+    margin: 0;
+    margin-bottom: 12px;
+
+    width: 278px;
+  }
+  .footer-main::after {
+    width: 640px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .footer-container {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .footer-nav {
+    margin: 0;
+  }
+  .footer-main {
+    flex-direction: row;
+  }
+  .footer-form {
+    margin: 0;
+    margin-left: auto;
+  }
+
+  .copyrigth-content {
+  }
+  .footer-logo {
+    display: initial;
+    margin: 0;
+    margin-bottom: 32px;
+  }
+  .footer-main::after {
+    width: 1312px;
+  }
+}
