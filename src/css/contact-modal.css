@@ -12,7 +12,7 @@
   padding: 64px 0;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 99999;
+  z-index: 9999;
 }
 
 .window-is-invisible {
