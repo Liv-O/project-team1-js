@@ -5,7 +5,7 @@ const mobileMenuLinks = document.querySelectorAll('.menu-link');
 const desktopLinks = document.querySelectorAll('.header-link'); 
 const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
-const smoothScroll = (e) => {
+export const smoothScroll = (e) => {
   e.preventDefault();
   const targetID = e.currentTarget.getAttribute('href');
   const targetSection = document.querySelector(targetID);

@@ -1,8 +1,12 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { smoothScroll } from './header';
 
 const emailInput = document.querySelector('#footerMail');
 const emailForm = document.querySelector('#formFooter');
+const footerLinks = document.querySelectorAll('.footer-anchor-link');
+
+footerLinks.forEach((link) => link.addEventListener('click', smoothScroll));
 
 const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
