@@ -1,8 +1,6 @@
-import Swiper from 'swiper';
-import { Navigation, Pagination, Keyboard, Mousewheel } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
 
-const swiperDiv = new Swiper('.swiper-div', {
-  modules: [Navigation, Pagination, Keyboard, Mousewheel],
+const feedbackSlider = new Swiper('.swiper-div', {
   loop: false,
   spaceBetween: 24,
 
@@ -12,8 +10,8 @@ const swiperDiv = new Swiper('.swiper-div', {
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.feedbacks-button-next',
+    prevEl: '.feedbacks-button-prev',
     addIcons: false,
   },
   keyboard: {
@@ -40,16 +38,37 @@ const swiperDiv = new Swiper('.swiper-div', {
   },
 });
 
-const swiperUL = document.querySelector('.swiper-wrapper');
+const swiperUL = document.querySelector('.feedbacks');
 
 swiperUL.addEventListener('keydown', event => {
   if (event.key === 'Tab') {
     event.preventDefault();
 
     if (event.shiftKey) {
-      swiperDiv.slidePrev();
+      feedbackSlider.slidePrev();
     } else {
-      swiperDiv.slideNext();
+      feedbackSlider.slideNext();
     }
   }
 });
+
+const prevButton = document.querySelector('.feedbacks-button-prev');
+const nextButton = document.querySelector('.feedbacks-button-next');
+
+function handleButtonClick(button) {
+  if (button) {
+    window.requestAnimationFrame(() => button.blur());
+  }
+}
+
+if (prevButton) {
+  prevButton.addEventListener('click', function () {
+    handleButtonClick(this);
+  });
+}
+
+if (nextButton) {
+  nextButton.addEventListener('click', function () {
+    handleButtonClick(this);
+  });
+}
