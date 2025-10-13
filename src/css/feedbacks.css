@@ -2,6 +2,9 @@
   padding-top: 64px;
   padding-bottom: 64px;
 }
+.feedbacks:focus {
+  outline: unset;
+}
 .feedbacks-div-title {
   margin-bottom: 80px;
 }
@@ -29,7 +32,6 @@
 
 .ul-swiper-wrapper {
   margin-bottom: 32px;
-  /* display: flex; */
 }
 
 .swiper-slide {
@@ -40,9 +42,9 @@
   padding: 32px;
   flex-shrink: 0;
 }
-.ul-swiper-wrapper:focus {
+/* .ul-swiper-wrapper:focus {
   outline: unset;
-}
+} */
 
 .container-comments {
 }
@@ -89,80 +91,6 @@
   width: auto;
   margin: 0;
 }
-
-/* .icon-arrow-left,
-.icon-arrow-right {
-  fill: currentColor;
-} */
-/* 
-.slider-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  color: #0b0500;
-  border: 1px solid rgba(11, 5, 0, 0.15);
-  background-color: #e15d05;
-  cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, border 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.slider-button:hover,
-.slider-button:focus {
-  background-color: #fceee6;
-  outline: none;
-}
-
-.slider-button:active {
-  color: #fff;
-  background-color: #5a2502;
-}
-
-.swiper-button-disabled {
-  color: #0b0500;
-  border: 1px solid rgba(11, 5, 0, 0.15);
-  background: #e15d05;
-  opacity: 0.2;
-
-  pointer-events: none;
-  cursor: default;
-}
-
-.slider-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.slider-buttons-box {
-  display: flex;
-  gap: 16px;
-} */
-
-/* .swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-horizontal.swiper-pagination-bullets {
-} */
-/* 
-.swiper-div,
-.events-swiper {
-  --swiper-theme-color: #0b0500;
-  --swiper-pagination-color: var(--swiper-theme-color);
-  --swiper-pagination-bullet-width: 8px;
-  --swiper-pagination-bullet-height: 8px;
-  --swiper-pagination-bullet-inactive-color: var(--swiper-theme-color);
-  --swiper-pagination-bullet-inactive-opacity: 0.2;
-  --swiper-pagination-bullet-opacity: 1;
-  --swiper-pagination-bullet-horizontal-gap: 0;
-}
-
-.slider-pagination {
-  display: flex;
-  gap: 8px;
-} */
-
-
 /* Tablet */
 
 @media screen and (min-width: 768px) {
