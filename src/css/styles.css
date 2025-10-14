@@ -1,4 +1,5 @@
 /* Common styles */
+@import 'modern-normalize/modern-normalize.css';
 @import url('./reset.css');
 @import url('./container.css');
 @import url('./base.css');

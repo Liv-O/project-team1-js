@@ -168,8 +168,8 @@ document.addEventListener('click', e => {
 booksList.addEventListener('click', async e => {
   if (!e.target.classList.contains('book-item-btn')) return;
   const bookId = e.target.dataset.bookId;
-  openBookModal();
   await fetchBookId(bookId);
+  openBookModal(); 
 });
 
 loadCategories().then(() => loadBooks("all"));
