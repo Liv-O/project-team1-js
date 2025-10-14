@@ -53,12 +53,22 @@
 .book-container {
 }
 
+.book-img-container {
+  margin-bottom: 24px;
+}
+
 .book-img {
   display: flex;
   object-fit: cover;
   border-radius: 8px;
   width: 100%;
   height: 466px;
+}
+
+.book-modal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
@@ -69,7 +79,6 @@
   /* line-height: 48px; */
   line-height: 1.2;
   letter-spacing: -0.01em;
-  margin-bottom: 8px;
 }
 
 .book-author {
@@ -78,7 +87,6 @@
 
   /* line-height: 21px; */
   line-height: 1.5;
-  margin-bottom: 8px;
 }
 
 .book-price {
@@ -88,12 +96,12 @@
   /* line-height: 34px; */
   line-height: 1.4;
   letter-spacing: -0.01em;
-  margin-bottom: 24px;
 }
 
 .form-quantity {
   display: flex;
   flex-direction: column;
+  margin-bottom: 32px;
 }
 
 .quantity {
@@ -185,13 +193,18 @@
   background-color: initial;
 }
 
+.move-book-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .add-to-cart-btn {
   display: block;
-  margin-bottom: 24px;
   background-color: #e15d05;
   border-radius: 4px;
   padding: 12px 24px;
-  width: 311px;
+  width: 100%;
   height: 48px;
   border: none;
   text-align: center;
@@ -221,7 +234,7 @@
   display: block;
   background-color: transparent;
   padding: 12px 24px;
-  width: 311px;
+  width: 100%;
   height: 48px;
   border: 1px solid #0b0500;
   border-radius: 4px;
@@ -231,7 +244,6 @@
 
   /* line-height: 24px; */
   line-height: 1.5;
-  margin-bottom: 32px;
   cursor: pointer;
 }
 
@@ -371,7 +383,12 @@
     gap: 24px;
   }
 
-  .book-img {
+  .book-all-info {
+    display: flex;
+    gap: 24px;
+  }
+
+  .book-img-container {
     margin-bottom: 0;
   }
 
@@ -389,11 +406,23 @@
 
   .book-modal {
     width: 1300px;
-    padding: 64px;
+    padding: 64px 104px;
+  }
+
+  .book-all-info {
+    padding-bottom: 48px;
+  }
+
+  .form-quantity {
+    width: 642px;
   }
 
   .quantity {
     margin-bottom: 16px;
+  }
+
+  .move-book-btns {
+    flex-direction: row;
   }
 
   .add-to-cart-btn {
@@ -401,11 +430,5 @@
   }
   .buy-now-btn {
     margin: 0;
-  }
-
-  .move-book-btns {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 32px;
   }
 }
