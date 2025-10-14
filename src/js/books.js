@@ -33,7 +33,7 @@ function renderBooks() {
 
   booksList.innerHTML = booksToRender.map(book => `
       <li class="book-list-item">
-          <img class="book-item-img" src="${book.book_image}" alt="${book.title}" />
+          <img class="book-item-img" src="${book.book_image}" alt="${book.title}" loading="lazy"/>
           <div class="book-item-description">
             <div class="book-description-text">
               <div class="book-title-and-author">
