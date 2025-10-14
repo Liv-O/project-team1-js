@@ -199,7 +199,7 @@
 @media screen and (min-width: 768px) {
   .contact-modal {
     width: 704px;
-    height: 760px;
+    min-height: 760px;
     padding: 64px 32px;
   }
 
