@@ -5,6 +5,7 @@
     position: relative;
     z-index: 10;
     background-color: #fceee6;
+    padding: 14px 20px;
 }
 
 .header-container {
@@ -13,7 +14,7 @@
     justify-content: space-between;
     width: 100%;
     background-color: transparent;
-    padding: 14px 20px;
+
 }
 
 .header-nav {
@@ -153,11 +154,9 @@
 @media screen and (min-width: 768px) {
     .header {
         height: 72px;
-    }
-
-    .header-container {
         padding: 16px 32px;
     }
+
 
     .menu-btn {
         display: none;
@@ -176,7 +175,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .header-container {
+    .header {
         padding: 16px 64px;
     }
 }
