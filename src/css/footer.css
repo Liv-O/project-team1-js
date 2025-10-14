@@ -169,7 +169,7 @@
 
 @media screen and (min-width: 768px) {
   .footer-container {
-    max-width: 640px;
+    /* max-width: 640px; */
   }
   .footer-list {
     flex-direction: row;
@@ -195,10 +195,14 @@
 
     width: 278px;
   }
+  .footer-copyrigth-text {
+    margin: 0 auto;
+    max-width: 640px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .footer-container {
-    max-width: 1440px;
+    /* max-width: 1440px; */
   }
   .footer-list {
     margin-bottom: 0;
@@ -219,5 +223,8 @@
     display: initial;
     margin: 0;
     margin-bottom: 32px;
+  }
+  .footer-copyrigth-text {
+    max-width: 1312px;
   }
 }
