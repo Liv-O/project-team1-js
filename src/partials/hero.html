@@ -1,8 +1,12 @@
-<section class="hero hero-section container">
-  <div class="hero-inner">
-    <div class="swiper hero-slider">
-      <ul class="swiper-wrapper hero-slider-wrapper">
-        <li class="swiper-slide">
+<section class="hero hero-section">
+  <div class="hero-inner container">
+    <div
+      class="swiper hero-slider"
+      aria-live="polite"
+      aria-roledescription="carousel"
+    >
+      <ul class="swiper-wrapper hero-slider-wrapper" role="list">
+        <li class="swiper-slide" role="group" aria-label="Slide 1 of 4">
           <div class="swiper-slide-wrapper">
             <picture>
               <source
@@ -59,7 +63,7 @@
               <img
                 class="hero-slider-img"
                 src="/img/hero/banner-desktop-1.jpg"
-                alt="banner"
+                alt="Get 10% off your first order"
                 width="1312"
                 height="395"
                 loading="lazy"
@@ -70,11 +74,16 @@
                 Get 10% off <br />
                 your first order
               </p>
-              <a class="hero-slider-link" href="#books">Shop Now!</a>
+              <a
+                class="hero-slider-link"
+                href="#books"
+                aria-label="Go to the books section"
+                >Shop Now!</a
+              >
             </div>
           </div>
         </li>
-        <li class="swiper-slide">
+        <li class="swiper-slide" role="group" aria-label="Slide 2 of 4">
           <div class="swiper-slide-wrapper">
             <picture>
               <source
@@ -131,7 +140,7 @@
               <img
                 class="hero-slider-img"
                 src="/img/hero/banner-desktop-2.jpg"
-                alt="banner"
+                alt="Save 15% on some books"
                 width="1312"
                 height="395"
                 loading="lazy"
@@ -142,11 +151,16 @@
                 Save 15% <br />
                 on some books
               </p>
-              <a class="hero-slider-link" href="#books">Shop Now!</a>
+              <a
+                class="hero-slider-link"
+                href="#books"
+                aria-label="Go to the books section"
+                >Shop Now!</a
+              >
             </div>
           </div>
         </li>
-        <li class="swiper-slide">
+        <li class="swiper-slide" role="group" aria-label="Slide 3 of 4">
           <div class="swiper-slide-wrapper">
             <picture>
               <source
@@ -203,7 +217,7 @@
               <img
                 class="hero-slider-img"
                 src="/img/hero/banner-desktop-3.jpg"
-                alt="banner"
+                alt="Summer Sale! Up to -40% discounts"
                 width="1312"
                 height="395"
                 loading="lazy"
@@ -214,11 +228,16 @@
                 Summer Sale! <br />
                 Up to -40% discounts
               </p>
-              <a class="hero-slider-link" href="#books">Shop Now!</a>
+              <a
+                class="hero-slider-link"
+                href="#books"
+                aria-label="Go to the books section"
+                >Shop Now!</a
+              >
             </div>
           </div>
         </li>
-        <li class="swiper-slide">
+        <li class="swiper-slide" role="group" aria-label="Slide 4 of 4">
           <div class="swiper-slide-wrapper">
             <picture>
               <source
@@ -275,7 +294,7 @@
               <img
                 class="hero-slider-img"
                 src="/img/hero/banner-desktop-4.jpg"
-                alt="banner"
+                alt="Last chance to buy our spring bestsellers"
                 width="1312"
                 height="395"
                 loading="lazy"
@@ -285,26 +304,35 @@
               <p class="hero-slider-text">
                 Last chance to buy our spring bestsellers
               </p>
-              <a class="hero-slider-link" href="#books">Shop Now!</a>
+              <a
+                class="hero-slider-link"
+                href="#books"
+                aria-label="Go to the books section"
+                >Shop Now!</a
+              >
             </div>
           </div>
         </li>
       </ul>
 
-      <div class="hero-slider-buttons slider-buttons-box">
-        <div class="slider-button hero-button-prev" aria-label="previous slide">
-          <svg class="icon-arrow-left" width="14" height="14">
-            <use href="/img/sprite-opt.svg#icon-left-arrow"></use>
-          </svg>
+      <div class="hero-footer">
+        <div class="hero-slider-buttons slider-buttons-box">
+          <div
+            class="slider-button hero-button-prev"
+            aria-label="previous slide"
+          >
+            <svg class="icon-arrow-left" width="14" height="14">
+              <use href="/img/sprite-opt.svg#icon-left-arrow"></use>
+            </svg>
+          </div>
+          <div class="slider-button hero-button-next" aria-label="next slide">
+            <svg class="icon-arrow-right" width="14" height="14">
+              <use href="/img/sprite-opt.svg#icon-right-arrow"></use>
+            </svg>
+          </div>
         </div>
-        <div class="slider-button hero-button-next" aria-label="next slide">
-          <svg class="icon-arrow-right" width="14" height="14">
-            <use href="/img/sprite-opt.svg#icon-right-arrow"></use>
-          </svg>
-        </div>
+        <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
       </div>
     </div>
-    <h1 class="hero-title">Discover Your Next Great Read Today!</h1>
-  
   </div>
 </section>

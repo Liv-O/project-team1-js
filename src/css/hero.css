@@ -2,10 +2,6 @@
   padding-bottom: 32px;
 }
 
-.hero-slider {
-  margin-bottom: 24px;
-}
-
 .hero-title {
   font-weight: 600;
   font-size: 40px;
@@ -70,32 +66,21 @@
   color: #fff;
 }
 
-.hero-slider-buttons {
+.hero-footer {
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 24px;
+}
+
+.hero-slider-buttons {
+  width: 100%;
   justify-content: flex-end;
-  align-items: flex-end;
 }
 
 @media screen and (min-width: 768px) {
-  .hero-inner {
-    position: relative;
-    padding-bottom: 24px;
-  }
-
   .hero-slider {
     margin-bottom: 0;
     padding-bottom: 24px;
-  }
-
-  .hero-title {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    max-width: 560px;
-  }
-
-  .hero-slider-wrapper {
-    margin-bottom: 48px;
   }
 
   .swiper-slide-wrapper {
@@ -121,24 +106,29 @@
     padding: 4px 42px;
     border-radius: 4px;
   }
-}
 
-@media screen and (min-width: 1440px) {
-  .hero-inner {
-    padding-bottom: 8px;
+  .hero-footer {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 0;
+    column-gap: 24px;
   }
 
-  .hero-slider {
-    padding-bottom: 7px;
+  .hero-slider-buttons {
+    width: auto;
+    gap: 24px;
   }
 
   .hero-title {
-    max-width: 1160px;
-    font-size: 52px;
+    order: -1;
+    max-width: 100%;
   }
+}
 
-  .hero-slider-wrapper {
-    margin-bottom: 30px;
+@media screen and (min-width: 1440px) {
+  .hero-title {
+    font-size: 52px;
   }
 
   .swiper-slide-wrapper {
