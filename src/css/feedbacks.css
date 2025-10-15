@@ -39,15 +39,16 @@
 .feedbacks-item {
   border: 1px solid rgba(11, 5, 0, 0.15);
   border-radius: 16px;
-  padding: 32px;
+  padding: 32px 32px 102px 32px;
   flex-shrink: 0;
 }
 /* .ul-swiper-wrapper:focus {
   outline: unset;
 } */
 
-.container-comments {
-}
+/* .container-comments {
+  margin-bottom: 70px;
+} */
 
 .feedbacks-comments {
   font-weight: 400;
@@ -61,7 +62,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
 }
 
 .feedbacks-comments-img {
@@ -94,9 +95,12 @@
 /* Tablet */
 
 @media screen and (min-width: 768px) {
-  .user-info {
+  /* .user-info {
     margin-bottom: 0;
-  }
+  } */
+   .feedbacks-item {
+    padding: 32px;
+   }
 }
 /* Leptop */
 @media screen and (min-width: 1440px) {

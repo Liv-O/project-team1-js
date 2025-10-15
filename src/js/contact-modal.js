@@ -73,13 +73,6 @@ contactModalForm.addEventListener('submit', event => {
     });
     return;
   }
-
-  iziToast.success({
-    title: 'Congratulations!',
-    message: 'Data sent. Have a nice day)',
-    position: 'topRight',
-  });
-
   const userData = {
     name: userName,
     email: userEmail,
@@ -88,4 +81,11 @@ contactModalForm.addEventListener('submit', event => {
   console.log(userData);
 
   contactModalForm.reset();
+  closeContactModal();
+
+   iziToast.success({
+    title: 'Congratulations!',
+    message: 'Data sent. Have a nice day)',
+    position: 'topRight',
+  });
 });
