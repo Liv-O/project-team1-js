@@ -1,6 +1,5 @@
 import axios from "axios";
-
-import { openBookModal, fetchBookId } from "./book-modal"
+import { openBookModal, fetchBookId } from "./book-modal";
 
 const booksCategoriesDesktopList = document.querySelector('#books-categories-desktop-list');
 const categoriesDropdownWrapper = document.querySelector('.categories-dropdown-wrapper');
@@ -13,7 +12,7 @@ const booksLoadMoreBtn = document.querySelector('.books-load-more');
 axios.defaults.baseURL = 'https://books-backend.p.goit.global/books';
 
 let currentBooksLimit = 0;
-let allBooksData = []; 
+let allBooksData = [];
 let currentCategory = "all";
 const SHOW_MORE_QUANTITY = 4;
 
@@ -21,7 +20,25 @@ function getInitialBooksLimit() {
   return window.innerWidth >= 1440 ? 24 : 10;
 }
 
-function renderBooks() {
+function generateBooksHTML(books) {
+  return books.map(book => `
+    <li class="book-list-item">
+        <img class="book-item-img" src="${book.book_image}" alt="${book.title}" />
+        <div class="book-item-description">
+          <div class="book-description-text">
+            <div class="book-title-and-author">
+              <h3 class="book-item-title">${toTitleCase(book.title) || "No Title"}</h3>
+              <p class="book-item-author">${book.author || "Unknown Author"}</p>
+            </div>
+            <p class="book-item-price">$${parseInt(book.price)}</p>
+          </div>
+          <button class="book-item-btn" type="button" data-book-id="${book._id}">Learn More</button>
+        </div>
+    </li>
+  `).join('');
+}
+
+function renderBooks(isLoadMore = false) {
   if (!allBooksData.length) {
     booksList.innerHTML = "<li class='books-list-problem'>No books found</li>";
     booksShown.textContent = "0 books";
@@ -29,25 +46,20 @@ function renderBooks() {
     return;
   }
 
-  const booksToRender = allBooksData.slice(0, currentBooksLimit);
+  const booksToRender = allBooksData.slice(
+    isLoadMore ? currentBooksLimit - SHOW_MORE_QUANTITY : 0,
+    currentBooksLimit
+  );
 
-  booksList.innerHTML = booksToRender.map(book => `
-      <li class="book-list-item">
-          <img class="book-item-img" src="${book.book_image}" alt="${book.title}" loading="lazy"/>
-          <div class="book-item-description">
-            <div class="book-description-text">
-              <div class="book-title-and-author">
-                <h3 class="book-item-title">${toTitleCase(book.title) || "No Title"}</h3>
-                <p class="book-item-author">${book.author || "Unknown Author"}</p>
-              </div>
-              <p class="book-item-price">$${parseInt(book.price)}</p>
-            </div>
-            <button class="book-item-btn" type="button" data-book-id="${book._id}">Learn More</button>
-          </div>
-      </li>
-  `).join('');
+  const booksHTML = generateBooksHTML(booksToRender);
 
-  booksShown.textContent = `Showing ${booksToRender.length} of ${allBooksData.length} books`;
+  if (isLoadMore) {
+    booksList.insertAdjacentHTML("beforeend", booksHTML);
+  } else {
+    booksList.innerHTML = booksHTML;
+  }
+
+  booksShown.textContent = `Showing ${Math.min(currentBooksLimit, allBooksData.length)} of ${allBooksData.length} books`;
   booksLoadMoreBtn.classList.toggle('books-hidden', currentBooksLimit >= allBooksData.length);
 }
 
@@ -142,7 +154,7 @@ async function loadBooks(category, isLoadMore = false) {
       });
     }
 
-    renderBooks();
+    renderBooks(isLoadMore);
 
   } catch (error) {
     booksList.innerHTML = "<li class='books-list-problem'>Error loading books</li>";
@@ -169,7 +181,7 @@ booksList.addEventListener('click', async e => {
   if (!e.target.classList.contains('book-item-btn')) return;
   const bookId = e.target.dataset.bookId;
   await fetchBookId(bookId);
-  openBookModal(); 
+  openBookModal();
 });
 
 loadCategories().then(() => loadBooks("all"));
